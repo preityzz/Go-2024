@@ -1,0 +1,12 @@
+//dfs type
+1.base case
+2.conditional case
+3.left right
+(1448 qus)
+**********************
+//inorder type
+1.base case2
+2.inorder(left)
+3.push_back(contions)
+4.inorder(right)
+

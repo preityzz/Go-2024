@@ -2,3 +2,5 @@
 //2. find min,max  i.e. to write logic function and  to make it if possible then min k liye e=mid-1 pe and if max then s=mid+1; (koko eating and after that in strivers playlist)
 //3.formula calc scuh as kth missing positive int (striver)
 //4.max(min )  OR min(max) (aggressive cows, book allocation(painters partion,split array largest sum )all exact book allocation)
+//5.median qus or kth median
+//6.2d search(easy like go to each row and search like 1D bs)

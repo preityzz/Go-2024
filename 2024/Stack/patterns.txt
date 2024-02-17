@@ -1,0 +1,2 @@
+1.no need to reverse aaray nd then return tc(nlogn);
+just store from back in vector<int>ans; int n=stack.size(); ans[n-1]=st.top(); till !st.empty();

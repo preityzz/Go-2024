@@ -1,0 +1,3 @@
+basically yhi h toh make a prefix array and to make a suffix array and qus ki need k hisaab se 
+//at that i index uss ele se bda(inc order) or uss ele se chota (dec order)  elements kittne h we have to store
+//or max ele usse pehle kittne h min element kittne h aise store for each element at that index

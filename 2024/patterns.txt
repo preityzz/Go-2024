@@ -2,3 +2,9 @@
 1.subarray/substring mostly questions first brute force O(n^2) tkand then optimize using sliding window (sometimes use map,queue) according to qus given
 2.subsequence(dp,two pointers ,sorting and something maintaining the index)
 3.anagrams qus mostly use(sort the words ,compare or store accordingly)
+
+Similar Problems : 
+// 1. Word Ladder (Leetcode)
+// 2. Find jumping numbers less than x (GFG)
+// 3. Gene Mutation (Leetcode)
+// 4. Sequential Digits (Leetcode)

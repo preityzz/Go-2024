@@ -3,7 +3,7 @@
 2.subsequence(dp,two pointers ,sorting and something maintaining the index).DP k qus me mostly options se check take or not take sb.
 3.anagrams qus mostly use(sort the words ,compare or store accordingly)
 4. Two pointers me mostly i=0 and j=n-1 se condtion while(i<n && j>=0) ans if value bdi h target se then j-- else i++ (just think like binary search) 
-
+5.inplace  qus me always 1-2 extra poinetr var leke krrte h  ussi arr me change
 
 Similar Problems : 
 // 1. Word Ladder (Leetcode)

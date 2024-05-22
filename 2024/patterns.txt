@@ -4,9 +4,24 @@
 3.anagrams qus mostly use(sort the words ,compare or store accordingly)
 4. Two pointers me mostly i=0 and j=n-1 se condtion while(i<n && j>=0) ans if value bdi h target se then j-- else i++ (just think like binary search) 
 5.inplace  qus me always 1-2 extra poinetr var leke krrte h  ussi arr me change
+6.90 degree--> (i=0 and j=i+1) [swap(mat[i][j],mat[j][i])] ans then reverse matrix[i]. 
+7.rotation k qus me always %n krrlo taaki vo araay ka ind pkd le  k =k%n (eg rotate array)
+
 
 Similar Problems : 
 // 1. Word Ladder (Leetcode)
 // 2. Find jumping numbers less than x (GFG)
 // 3. Gene Mutation (Leetcode)
 // 4. Sequential Digits (Leetcode)
+
+
+
+//top interview again
+88. Merge Sorted Array //peeche se shruru using 3 pointers
+36. Valid Sudoku //point wise
+128. Longest Consecutive Sequence //ek loop k andr ek aur while
+92. Reverse Linked List II //follow point wise
+134. Gas Station //greedy bkwss
+189. Rotate Array //reverse 3 times to make right shift 
+1886. Determine Whether Matrix Can Be Obtained By Rotation //4 times rotate krrne baad vhii sb matrix aa jaata h
+61. Rotate List //rotate func alag se  jissme piche se last ele leke aage lagte jaao till k--.	

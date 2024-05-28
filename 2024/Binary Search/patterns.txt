@@ -4,3 +4,5 @@
 //4.max(min )  OR min(max) (aggressive cows, book allocation(painters partion,split array largest sum )all exact book allocation)
 //5.median qus or kth median
 //6.2d search(easy like go to each row and search like 1D bs)
+
+1608. Special Array With X Elements Greater Than or Equal X ->bs (see video codestorywithmik)

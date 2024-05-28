@@ -1,13 +1,20 @@
 ********************************************************************
 1.subarray/substring mostly questions first brute force O(n^2) tk and then optimize using sliding window (sometimes use map,queue) according to qus given
 2.subsequence(dp,two pointers ,sorting and something maintaining the index).DP k qus me mostly options se check take or not take sb.
-3.anagrams qus mostly use(sort the words ,compare or store accordingly)
+3.anagrams qus mostly use(sort the words ,compare or store accordingly) //sorting complexity htani h toh take freq of that string ->(vector<int>freq(26,0);
+for(auto ch:s) freq[ch-'a']++) if words anagram h toh unki freq same hi aayegi .
 4. Two pointers me mostly i=0 and j=n-1 se condtion while(i<n && j>=0) ans if value bdi h target se then j-- else i++ (just think like binary search) 
 5.inplace  qus me always 1-2 extra poinetr var leke krrte h  ussi arr me change
 6.90 degree--> (i=0 and j=i+1) [swap(mat[i][j],mat[j][i])] ans then reverse matrix[i]. 
 7.rotation k qus me always %n krrlo taaki vo araay ka ind pkd le  k =k%n (eg rotate array)
 8. unordered_map me no sorted , map me sorted order me rhta hai (eg: Remove Duplicates from Sorted List II)
 9.stringstream ss(s)->while(ss>>token) //ye yha pe bydefault string ko spaces se break krrk token me daalta jaayega
+10. for(i->n){sort()} for k andr sort rhta usski tc=n*klogk hoti h
+11. kisi bhi loop ko bss chalate rhna h toh while(true){..isske andr condition hote return krrne k .. if h toh return true yaa jo bhi.}
+12.lower bound returns iterator therefore -num.begin() krrte fir so that ind return kre (tc->log n ) same as binary search)
+           //int ind=lower_bound(nums.begin(),nums.end(),i)-nums.begin(); //this will return pehla ele jo ki greater than or eual to i hoga
+13.kisi bhi ele ka leftmax and rightmax kaiseniaalte see qus 42 leetcode.
+
 
 
 Similar Problems : 
@@ -38,6 +45,17 @@ Similar Problems :
 238. Product of Array Except Self //Prefix(product of left ele excluding that ele) and suffix(product of right ele excluding that ele) product  ans multiply both them.
 25. Reverse Nodes in k-Group // recursive way se hoga  and  if ll me ele less than k h then unko nhi reverse krrna h ka ek alag->ListNode* cursor=head; krk for loop
 74. Search a 2D Matrix // see the optimized approach (eliminate row and col ko )
+918. Maximum Sum Circular Subarray //kadane's algo ->find max_sum 2. find min_sum 3.find max of max_sum and total_sum - (min_sum)
+49. Group Anagrams //sorting ki jgh freq of anagrams bhi le skte (vector<int>freq(26,0);for(auto ch:s) freq[ch-'a']++;
+202. Happy Number // ans==1 happy and ans==4 not happy // kisi bhi loop ko bss chalate rhna h toh while(true){..isske andr condition hote return krrne k ..}
+209. Minimum Size Subarray Sum //do while loop lagana h yrr
+76. Minimum Window Substring //freq stoe and logic of sliding window
+33. Search in Rotated Sorted Array // bkwss
+42. Trapping Rain Water //uss ele ka min of(leftmax nikaalo and uss ele ka rightmax nikaalo) and khud k height se minus krrk ans me add krrdo
+73. Set Matrix Zeroes //Pehle row ko zero for(k=0;k<n;k++)v[k][j]=0;  then col ko 
+153. Find Minimum in Rotated Sorted Array // e= mid krenge kyunki mid bhi mera ans ho skta h kyunki yha pe koi == case nhi h issliye e= mid kro tb vo vlaue 						bhi check hogi vrrna skip hojaayegi
 
+373. Find K Pairs with Smallest Sums ////(Slight Better approach) - O(klog(k))
+//basically hme select krrna h (i+1,j) ya fir(i,j+1) ->out of bound nhi hone chahiye and not vis hone chahiye ->jiska sum min h vo 
 
 

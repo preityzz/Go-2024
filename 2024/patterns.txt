@@ -54,8 +54,7 @@ Similar Problems :
 42. Trapping Rain Water //uss ele ka min of(leftmax nikaalo and uss ele ka rightmax nikaalo) and khud k height se minus krrk ans me add krrdo
 73. Set Matrix Zeroes //Pehle row ko zero for(k=0;k<n;k++)v[k][j]=0;  then col ko 
 153. Find Minimum in Rotated Sorted Array // e= mid krenge kyunki mid bhi mera ans ho skta h kyunki yha pe koi == case nhi h issliye e= mid kro tb vo vlaue 						bhi check hogi vrrna skip hojaayegi
-
 373. Find K Pairs with Smallest Sums ////(Slight Better approach) - O(klog(k))
 //basically hme select krrna h (i+1,j) ya fir(i,j+1) ->out of bound nhi hone chahiye and not vis hone chahiye ->jiska sum min h vo 
-
+295. Find Median from Data Stream
 

@@ -1,7 +1,7 @@
 //Approach 
 1.sort based on start time or end time (mostly start time)->direct normally sort(a.begin(),a.end())
 2.overlap condition check ->[cs,ce](i) ,  [ns,ne](j)
-  if(ce>ns) //overlap [1,4] [2,7 ] (here delete 2,7)
+  if(ce>ns) //overlap [1,4] [2,7 ] (here delete 2,7)  
   //then check kissko delete krrna h [cs,ce] issko or [ns,ne]
   //delete that interval jisska end greater h because more overlaps ussme ho skte
   //if(ce>ne) delete ce thatis i=j;j++;
@@ -9,3 +9,10 @@
 
 3.non-overlap then easy inc i=j,j++;
   
+
+
+simple h 
+sort
+overlap condition(issk andr hrr qus k hisaab se diff check rhta h in burst balloon ya fir merge interval)
+non overlap me toh simple ya toh push_back yaa fir cnt++ yhii sb 
+return ans

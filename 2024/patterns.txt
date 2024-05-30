@@ -56,5 +56,10 @@ Similar Problems :
 153. Find Minimum in Rotated Sorted Array // e= mid krenge kyunki mid bhi mera ans ho skta h kyunki yha pe koi == case nhi h issliye e= mid kro tb vo vlaue 						bhi check hogi vrrna skip hojaayegi
 373. Find K Pairs with Smallest Sums ////(Slight Better approach) - O(klog(k))
 //basically hme select krrna h (i+1,j) ya fir(i,j+1) ->out of bound nhi hone chahiye and not vis hone chahiye ->jiska sum min h vo 
-295. Find Median from Data Stream
+295. Find Median from Data Stream //easy bss stream me aate jaa rha ussko left_max_heap and right_min_heap me divide krrte jaao
+55. Jump Game //i+nums[i] pos se relate and do all 3 approaches dp bhi dekh lena chahiye
+45. Jump Game II ,iii,iv(simple bfs h nice concept).
+452. Minimum Number of Arrows to Burst Balloons. //easy h same as merge intervals bss overlapping k andr ka condition thoda dhyaan se
+30. Substring with Concatenation of All Words //see the solution (not understand too much).
+
 

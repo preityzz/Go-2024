@@ -1,3 +1,5 @@
+*****TREE ME KOI BHI CONDITION LGATE THEN TRAVERSE K LIYE ALWAYS LEFT AND RIGHT ME JAAO RECURSIVE WAY SE 
+
 //dfs type
 1.base case
 2.conditional case
@@ -10,3 +12,17 @@
 3.push_back(contions)
 4.inorder(right)
 
+//bfs type
+1.queue
+2.visisted aaray
+3/while loop(!q.empty())
+4.1 level while(x--){....isske andr condition left right sb)
+
+
+1.height/max depth  calculate me node se dekhte h 
+2.tree me bhii koi cheez inplace krrni h toh swap kro and then traverse kro.(qus-226)
+3.mirror nikaalne ka simple tareeka just like isidentical same ussi trh ->ismirror(root,root) do baar same root ko bhej k ek k left me jaao ek k right me jaao and value check.
+4.if return bool me h then-> bool left=left traverse             bool l =solve(root->left,tsum - root->val);
+		          -> bool right=right traverse krrlo.    bool r= solve(root->right,tsum - root->val);
+  if int me h then ->        int left=height(root->left);
+		             int right=height(root->right);

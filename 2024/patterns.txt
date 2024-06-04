@@ -4,16 +4,21 @@
 3.anagrams qus mostly use(sort the words ,compare or store accordingly) //sorting complexity htani h toh take freq of that string ->(vector<int>freq(26,0);
 for(auto ch:s) freq[ch-'a']++) if words anagram h toh unki freq same hi aayegi .
 4. Two pointers me mostly i=0 and j=n-1 se condtion while(i<n && j>=0) ans if value bdi h target se then j-- else i++ (just think like binary search) 
-5.inplace  qus me always 1-2 extra poinetr var leke krrte h  ussi arr me change
+5.inplace  qus me always 1-2 extra poinetr var leke krrte h  ussi arr me change,OR->SWAP KRRKE BHI IN PLACE HOTA H 
 6.90 degree--> (i=0 and j=i+1) [swap(mat[i][j],mat[j][i])] ans then reverse matrix[i]. 
 7.rotation k qus me always %n krrlo taaki vo araay ka ind pkd le  k =k%n (eg rotate array)
 8. unordered_map me no sorted , map me sorted order me rhta hai (eg: Remove Duplicates from Sorted List II)
-9.stringstream ss(s)->while(ss>>token) //ye yha pe bydefault string ko spaces se break krrk token me daalta jaayega
+9.stringstream ss(s)->while(ss>>token) //ye yha pe bydefault string ko spaces se break krrk token me daalta jaayega(DIRECT FOR SPACE SE TODNE K LIYE)
 10. for(i->n){sort()} for k andr sort rhta usski tc=n*klogk hoti h
 11. kisi bhi loop ko bss chalate rhna h toh while(true){..isske andr condition hote return krrne k .. if h toh return true yaa jo bhi.}
 12.lower bound returns iterator therefore -num.begin() krrte fir so that ind return kre (tc->log n ) same as binary search)
            //int ind=lower_bound(nums.begin(),nums.end(),i)-nums.begin(); //this will return pehla ele jo ki greater than or eual to i hoga
-13.kisi bhi ele ka leftmax and rightmax kaiseniaalte see qus 42 leetcode.
+13.kisi bhi ele ka leftmax and rightmax kaise niaalte see qus 42 leetcode.
+14.single no.-> qus saareelements ka xor krrdenge toh only jo single h vhii bachega. (l se less and l se hi left shift toh << ye sign).
+15. if freq count ko (0,26 ) se nii i base indexing me store krrna h then freq[ch-'a' +1]++; aise store krrte h.
+16.    IF HME BREAK A STREAM ON THE BASIS OF COMMA , SLASH, SPACE TOH ->TC=O(n) stringstream ss(s);string token;while(getline(ss,token,'/'){..} qus->71 
+17. hm stack ki jgh in some qus vec bhi use krr skte h as: v.pop_back(),last ele access krrna h toh v.back();push k liye v.push_back().
+
 
 
 
@@ -56,10 +61,20 @@ Similar Problems :
 153. Find Minimum in Rotated Sorted Array // e= mid krenge kyunki mid bhi mera ans ho skta h kyunki yha pe koi == case nhi h issliye e= mid kro tb vo vlaue 						bhi check hogi vrrna skip hojaayegi
 373. Find K Pairs with Smallest Sums ////(Slight Better approach) - O(klog(k))
 //basically hme select krrna h (i+1,j) ya fir(i,j+1) ->out of bound nhi hone chahiye and not vis hone chahiye ->jiska sum min h vo 
-295. Find Median from Data Stream //easy bss stream me aate jaa rha ussko left_max_heap and right_min_heap me divide krrte jaao
+295. Find Median ;from Data Stream //easy bss stream me aate jaa rha ussko left_max_heap and right_min_heap me divide krrte jaao
 55. Jump Game //i+nums[i] pos se relate and do all 3 approaches dp bhi dekh lena chahiye
 45. Jump Game II ,iii,iv(simple bfs h nice concept).
 452. Minimum Number of Arrows to Burst Balloons. //easy h same as merge intervals bss overlapping k andr ka condition thoda dhyaan se
 30. Substring with Concatenation of All Words //see the solution (not understand too much).
-
-
+380. Insert Delete GetRandom O(1).//nice concept 
+69. Sqrt(x).//binary search se kro yrr s=1,e=x; if(mid*mid<=x) ans=mid,s=mid+1;else e= mid-1;
+50. Pow(x, n) //bit manipulation
+66. Plus One // simply peeche se shuru if(dig[i]==9)dig[i]=0; else dig[i]+=1 and return krrdo dig; but if (999) case h toh dig.push_back(0) and dig[0]=1                     
+		then return .
+172. Factorial Trailing Zeroes //nhi smjh aaya kuch bhi.
+14. Longest Common Prefix .
+12. Integer to Roman // //BDE SE CHOTA STORE KRENGE AUR SB STORE KRENGE MINUS VAALE BHi //and then calculate ;concept based.
+71. Simplify Path //simple using stringstrem break krrlo / k basis pe and use stack or vec 
+226. Invert Binary Tree //simply inplace krrna h toh swap kro left and right node and then traverse
+101. Symmetric Tree //mirror nikaalne ka simple tareeka just like isidentical sam ussi trh ismirror(root,root) do baar same root ko bhej k ek k left me jaao ek k right me jaao and value check.
+112. Path Sum //recusive -> return solve(root->left,tsum-root->val)|| solve(root->right,tsum-root->val); if bool me krrna h toh  bool left; bool 			right;return left||right;

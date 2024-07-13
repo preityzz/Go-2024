@@ -1,0 +1,39 @@
+//GRAPH QUS ARE OF TWO TYPES 
+(i) graph like(mtlb tree vaala graph jissme adjacency list bnani hoti then BFS/DFS traversal sb)
+(ii) 2-D GRID  vaala jissme  all 4 direction ya fir 8 direction me move.  //queueme<int,int> row,col jaata fir hm ussko check krrte.
+
+
+
+1.adj list representation(unordered_map<int,vector<int>>mp;)
+
+2.Bfs traversal ->tc = O(V+E)  SC=O(V)  //shortest path  pucha h toh bfs
+  Dfs traversal ->tc = O(V+E)  SC=O(V)
+
+3..connected components and directed graph me (for(int i=0;i<v;i++) loop is used.
+
+
+4.Cycle Detection-> me dfs and bfs me if(me function call hota ) return true. if(detect(src(i),parent(-1),vis,adj))
+
+ undirected graph ->BFS: (the node is already visited and should not equal to parent) (it!=parent)
+                    DFS:(the node is already visited and should not equal to parent)   (it!=parent)
+
+ Directed graph ->  DFS: the node is already visited and in currRecursion==true (inrecursion vaala concept).
+                    BFS:(kahn's algo // topo sort in bfs) --> if(ans.size()==V) return false;else return true;
+
+
+5. Topological sort
+                    DFS: stack use -> after the for loop for adj node in dfs.(issme cycle detection ka kuch ni h bss topo sort de deta in DAG)
+                    BFS : find indegree ;q.push(indegree[i]==0).while(!q.empty()){ adj me jaao and indegree[it]-- and if(indegree[it]==0)toh q.push(it));
+                          (Kahn's algo me can also detect cycle uppar likha h naa for directed graph)
+
+6.Dijkstra.s ALGO->(src 0 se shruru h yaa 1 se vaise hi dekh k for loop me i=1/0 se initialize hota and vector<int>dist(n+1/n , 1e9); hota (size bhi))
+
+     1.adj list: unordered_map<int,vector<pair<int,int>>>adj;  //node,adjnode,wt
+     2. Min heap use  {wt,adjnode};
+     3.3 chizein puchta h : //pura dist vector hrr node se adjnode ka min dist (toh return dist vector pura)
+		           // shortest path puchta h (parent[adjnode]=node;) parent vector bnale store krrte h
+		           //  no. of shortest paths (1976)
+		           //  min distance to reach destination (toh max of all elements of dist vector jo h vo min distance hota) if sequence me given h 			       toh return dist[n] ni toh for loop(1 se n ) maxi= max(maxi,dist[i]); (do leetcode-743)
+
+    4.Now jo qustions hote h 2D grid ->jaise vis 2D vector bnate he vaise dist ka bn jaayega 2D to store min dist as Dijkstra me hota h 
+				     ->baaki ssame jaise Pehle krrte h the  bss jb check krrte h adj vaala cell toh if(nr>=0 && nr<n && nc>=0 && nc<m && 					****dist+1<dis[nr][nc]***** && grid[nr][nc]==0) ye dist+1<dis[nr][nc] krrte for update and push as always

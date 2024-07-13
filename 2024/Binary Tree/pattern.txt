@@ -26,3 +26,14 @@
 		          -> bool right=right traverse krrlo.    bool r= solve(root->right,tsum - root->val);
   if int me h then ->        int left=height(root->left);
 		             int right=height(root->right);
+
+5.Construct Binary Tree from Inorder and Postorder Traversal->    //start....i-1 <-> i <-> i+1......end. preorder se root find kro (N,L,R);
+          Aise yaad rkho ->1.base case bnao->2.rootval lo preorder[ind] se->3.inorder me usska pos find kro->4.new root bnake left me start se i-1 tk and             	   right me i+1 se leke end tk ;
+
+Construct Binary Tree from Postorder and Inorder Traversal ->post me bss 2 change->1. indx array k last se shru hoga and2. root->right Pehle call hoga left se BCOZ POSTORDER ME->(L,R,N) toh peeche se rootval milega and then right jaao then left .
+
+6.LOT/preorder/postorder/inorder in sbka tc=O(N) and sc=O(N).
+  Morris traversal-> tc=O(N) sc=(1) (inplace pucha h tb ye basically)
+
+
+  

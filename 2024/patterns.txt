@@ -3,23 +3,36 @@
 2.subsequence(dp,two pointers ,sorting and something maintaining the index).DP k qus me mostly options se check take or not take sb.
 3.anagrams qus mostly use(sort the words ,compare or store accordingly) //sorting complexity htani h toh take freq of that string ->(vector<int>freq(26,0);
 for(auto ch:s) freq[ch-'a']++) if words anagram h toh unki freq same hi aayegi .
-4. Two pointers me mostly i=0 and j=n-1 se condtion while(i<n && j>=0) ans if value bdi h target se then j-- else i++ (just think like binary search) 
-5.inplace  qus me always 1-2 extra poinetr var leke krrte h  ussi arr me change,OR->SWAP KRRKE BHI IN PLACE HOTA H 
+4. Two pointers me mostly i=0 and j=n-1 se condtion while(i<n && j>=0) ans if value bdi h target se then j-- else i++ (just think like binary search -633) 
+5.inplace  qus me always 1-2 extra poinetr var leke krrte h  ussi arr me change,OR->SWAP KRRKE BHI IN PLACE HOTA H (GFG-Convert array into Zig-Zag fashion)
 6.90 degree--> (i=0 and j=i+1) [swap(mat[i][j],mat[j][i])] ans then reverse matrix[i]. 
 7.rotation k qus me always %n krrlo taaki vo araay ka ind pkd le  k =k%n (eg rotate array)
-8. unordered_map me no sorted , map me sorted order me rhta hai (eg: Remove Duplicates from Sorted List II)
+8. unordered_map me no sorted , map me sorted order me rhta hai (tc=of insertion of n ele->O(nlogn) (eg: Remove Duplicates from Sorted List II)
 9.stringstream ss(s)->while(ss>>token) //ye yha pe bydefault string ko spaces se break krrk token me daalta jaayega(DIRECT FOR SPACE SE TODNE K LIYE)
 10. for(i->n){sort()} for k andr sort rhta usski tc=n*klogk hoti h
 11. kisi bhi loop ko bss chalate rhna h toh while(true){..isske andr condition hote return krrne k .. if h toh return true yaa jo bhi.}
 12.lower bound returns iterator therefore -num.begin() krrte fir so that ind return kre (tc->log n ) same as binary search)
            //int ind=lower_bound(nums.begin(),nums.end(),i)-nums.begin(); //this will return pehla ele jo ki greater than or eual to i hoga
 13.kisi bhi ele ka leftmax and rightmax kaise niaalte see qus 42 leetcode.
+**kisi bhi ele ka nextsmallerele(i=n-1 se shuru) and prevsmaller ele (i=0)se shuru kaise nikalte see qus 84,85 leetcode.
 14.single no.-> qus saareelements ka xor krrdenge toh only jo single h vhii bachega. (l se less and l se hi left shift toh << ye sign).
 15. if freq count ko (0,26 ) se nii i base indexing me store krrna h then freq[ch-'a' +1]++; aise store krrte h.
 16.    IF HME BREAK A STREAM ON THE BASIS OF COMMA , SLASH, SPACE TOH ->TC=O(n) stringstream ss(s);string token;while(getline(ss,token,'/'){..} qus->71 
 17. hm stack ki jgh in some qus vec bhi use krr skte h as: v.pop_back(),last ele access krrna h toh v.back();push k liye v.push_back().
-
-
+18. char to string ->  string(1,'char_jo_bhi_h') ; eg:string(1,'G');
+19. Inplace mtlb basically hota ki constant space me i.e sc=O(1) ussme hm sirf var ya swap krrte trees me morris traversal krrte.
+20.int curr=mp.begin()->first; // map me start se pehla ele fetch
+21.BST ka inorder always sorted hota hai.
+22. Maths k lines k qus me slopes ka concept use hota h (leeetcode max points on a line)
+23.jb bhi vis string ka krrna hota ek set bna lete in graph(433,evaluate division).
+24.Graph me ->boundary se connected qus ka paatern ek hi h (see surrounded regions)(no. of enclaves)(flood fill)(rotten oranges me ->jaise surrounded vaalo ko queue me push vaise yhaa rotten vaalo ko queue me push) 
+25.SLIING WINDOW-> pattern mostly consecutive likha hoga yaa toh subaaray yaa fir fixed size jaisa kuvh ho tb bhii
+sliding window k kuch qus such  as(930 ,560 ,1248 ) can be done using hashing also as sum equals k rhta toh prevsum-k ***************just like totoalsum me se right minus krrdete toh left aata ye vaala concept .(a-b=c === a-c=b find in map )
+26.  way to make val long to avoid runtime error-> long long val= m*1LL * k*1LL;
+27.ek while k andr while hota in sliding window mtln n+n = O(2n)=O(n) and if usske andr pw map kuch h usska log n to overall O(nlogn) (leetcode-1438)
+28.Vector me jb h erase krrte h(arr.begin()+ind)uss ind ele ko delete krr dega and automatically vo left shift hojaata in vector leetcode-1823
+29. INTERSECTION LOGIC-int start = max(f[i][0], s[j][0]);  max of (0,0) dono array ka and min of (1,1) aur jisska 1,1 chota hoga vo aage ) 
+                       int end = min(f[i][1], s[j][1]);    bdhega.(leetcode-986)
 
 
 Similar Problems : 
@@ -27,6 +40,51 @@ Similar Problems :
 // 2. Find jumping numbers less than x (GFG)
 // 3. Gene Mutation (Leetcode)
 // 4. Sequential Digits (Leetcode)
+
+
+Multiset(a data structure)(TC=log n)(leetcode-1438)
+//can have duplicate ele 
+//in sorted manner me ele hote -> to access min element *st.begin(); for max element *st.rbegin(). * star se value access through pointer direct use these dont  store in another variable
+//find and erase a ele easily  
+
+
+Question look like sliding window but not
+//1.974. Subarray Sums Divisible by K (modulo baba ki jai ho).
+//2.523. Continuous Subarray Sum (modulo baba ki jai ho).
+
+
+DP notes:
+//if initialize krrna h min/max h toh int take=1e9;int nottake=1e9;
+//always recursion se shuru ->n-1 se and base case always 0 pe hota fir;**Recusrsion ka hrr qus n-1 ,m-1se shrur , bss triangle vaala chhod k kyunki ussme fixed start point and var end point tha issliye)
+//Recursion me base case and then direct int take=nums[i]+solve(i,nums,target-nums[i]) ;int notake=0+solve(i-1,nums,target-nums[i]);
+//memo me bss vhii thoda change //3 jgh->intialize(dp[201])->(--1 vaala)if(dp[i][j]!=-1) return dp[i][j];->(store) return dp[i][j]=min(up,left);(ja bhi return krr rhe hote h except bae case vha pe store krrte h dp[i][j])
+//tabulation e bottom up toh issme pele intailie krrna pdta toh int take=1e9;int nottak=1e9; then if(i>=1) take=nums[i]+dp[i-1][j];
+*****tabulation me bss for loops and base case alag tarike se likhne hote 0->n tk but jo take/nottake,match/notmatch vo exact same hota recursion vaala hi.
+//if bool h return type toh initialize take false; return take or nottake;
+//if recursion 0 se shuru h toh tabulation always n-1 se hoga or vice versa.
+
+//ek triangle and maximal square qus h jissme start in recursion is from 0,0 and in tabulation it is from i=n-1 seand j=m-1 se;
+
+************//4 qus almost same concept bss base case change
+combination sum(0,0 se sruru hota in rcursion),coin change,subset sum equal to target,0/1 knapsack (n-1)(m-1)
+
+DP patterns:
+1.dp on 1D(house robber)-> take=nums[i]+solve(i-2,nums) ,nottake=0+solve(i-1,nums)
+2. dp on grids(2D) -> fix(start and end pts)->unique paths(all possible way toh sum krrte h )(up+left);issme initialize int up=0,left=0;
+					    ->minimum path sum (min(up,left)) intailie krrna pdta toh int take=1e9;int nottak=1e9;
+                   -> variable(start and end pts)->triangle(fixed start(0,0) se shru and if(i==n-1) return arr[n-1][j] bcoz last row is destination .
+                                                   issme recursion me shuru hota h 0,0 se and tabulation me shuru hota peeche se.(n-2) se
+						->minimum falling path sum fix row(n-1).and traverse(j=0;j<m)
+                                                  fixed row (n-1 )se var col j=0 j<m ->  for(int j=0;j<m;j++ ){int val= solve(n-1,j,matrix);
+													       mini=min(mini,val);}return mini;
+
+3. dp on subsequences/subsets ->coin change(0/1 knapsack , combination sum hi bss base case change).
+			      ->LCS me 1 to n index leke krrte h.
+4. dp on strings
+
+
+
+
 
 
 
@@ -48,6 +106,7 @@ Similar Problems :
 21. Merge Two Sorted Lists // simple recursion se no merge sort and all;
 151. Reverse Words in a String //stringstream vaala.
 238. Product of Array Except Self //Prefix(product of left ele excluding that ele) and suffix(product of right ele excluding that ele) product  ans multiply both them.
+1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit(multiset)
 25. Reverse Nodes in k-Group // recursive way se hoga  and  if ll me ele less than k h then unko nhi reverse krrna h ka ek alag->ListNode* cursor=head; krk for loop
 74. Search a 2D Matrix // see the optimized approach (eliminate row and col ko )
 918. Maximum Sum Circular Subarray //kadane's algo ->find max_sum 2. find min_sum 3.find max of max_sum and total_sum - (min_sum)
@@ -57,6 +116,7 @@ Similar Problems :
 76. Minimum Window Substring //freq stoe and logic of sliding window
 33. Search in Rotated Sorted Array // bkwss
 42. Trapping Rain Water //uss ele ka min of(leftmax nikaalo and uss ele ka rightmax nikaalo) and khud k height se minus krrk ans me add krrdo
+*******************largest area of histogram bhi aise hi h (Use Next Smaller Element & Previous Smaller Element.)***********
 73. Set Matrix Zeroes //Pehle row ko zero for(k=0;k<n;k++)v[k][j]=0;  then col ko 
 153. Find Minimum in Rotated Sorted Array // e= mid krenge kyunki mid bhi mera ans ho skta h kyunki yha pe koi == case nhi h issliye e= mid kro tb vo vlaue 						bhi check hogi vrrna skip hojaayegi
 373. Find K Pairs with Smallest Sums ////(Slight Better approach) - O(klog(k))
@@ -70,7 +130,7 @@ Similar Problems :
 69. Sqrt(x).//binary search se kro yrr s=1,e=x; if(mid*mid<=x) ans=mid,s=mid+1;else e= mid-1;
 50. Pow(x, n) //bit manipulation
 66. Plus One // simply peeche se shuru if(dig[i]==9)dig[i]=0; else dig[i]+=1 and return krrdo dig; but if (999) case h toh dig.push_back(0) and dig[0]=1                     
-		then return .
+		then return . //aise hi hm binary me bhi krr skte h gfg(Binary representation of next number).
 172. Factorial Trailing Zeroes //nhi smjh aaya kuch bhi.
 14. Longest Common Prefix .
 12. Integer to Roman // //BDE SE CHOTA STORE KRENGE AUR SB STORE KRENGE MINUS VAALE BHi //and then calculate ;concept based.
@@ -78,3 +138,61 @@ Similar Problems :
 226. Invert Binary Tree //simply inplace krrna h toh swap kro left and right node and then traverse
 101. Symmetric Tree //mirror nikaalne ka simple tareeka just like isidentical sam ussi trh ismirror(root,root) do baar same root ko bhej k ek k left me jaao ek k right me jaao and value check.
 112. Path Sum //recusive -> return solve(root->left,tsum-root->val)|| solve(root->right,tsum-root->val); if bool me krrna h toh  bool left; bool 			right;return left||right;
+15. 3Sum // ek nums[i] ko fix kro and then vo target=-nums[i] hojaayega then apply two sum on rest array shuru=i+1 se and j=nums.size()-1
+129. Sum Root to Leaf Numbers // simpe hoga backtracking nhii lgegi.jaisa soch rhe ho bss vaise hi .
+106. Construct Binary Tree from Inorder and Postorder Traversal // simple approach  h inorder always left right batata and preorder root
+124. Binary Tree Maximum Path Sum //bss aise yaad rkho ki traverse krrte rho then->int wholepath=l+r+root->val;(issko return nhii ye toh wholepaht hogya na)
+   	JO MAX VO HMARA ANS:							   int maxioflefttoright=max(l,r)+root->val;
+    										   int bssroot=root->val;
+236. Lowest Common Ancestor of a Binary Tree -> 1.base case->2.traverse->3.if(left==NULL)toh return right ;if right==null toh left ->else return root jb                      											 sdono side se null nhi hoga.
+117. Populating Next Right Pointers in Each Node II //simpe bfs then hrr ek level complete hone baad connect next ->(i=1tov.size()-1) v[i-1]->next=v[i];   
+637. Average of Levels in Binary Tree // sum+=temp->val; hi krrte jaao ek vec me push krrk fir level baad avg nhi hoyega runtime error hojaaega 
+530. Minimum Absolute Difference in BST //->inorder>min of all adjacent ele in vec (pura array me traverse krrk min ->mini=min(mini,abs(v[i]-v[i-1]));        230. Kth Smallest Element in a BST // do the recursive approach->leftme jaate and when last left se return cnt++;if(cnt==k)return ans;nhii toh right me jaao.
+98. Validate Binary Search Tree //1.inorder se(checkedge case of duplicate values [2,2,2];by v[i-1]==v[i] ans false;
+				//2.recursive call
+155. Min Stack // ek main stack //ek min stack // just check if current element to be inserted is less than min toh insert
+149. Max Points on a Line //Line k qus me slopes sochna in maths problem 
+			  //ek points ko fix krrk saare points se angle nikaal k sote in map and take the max cnt;
+
+148. Sort List //sorting a linked list->1.find middile. 2->left=head and right=middle->next 3.sort left and right recursively as  (left=sortList(left);
+        right=sortList(right);)  4.mergetwosortedlinledlist(usingleetcode 21).
+23. Merge k Sorted Lists //1.divide the given vector ino two (partitionAndMerge(int s,int e,vector<ListNode*>& lists)) {
+
+        ListNode* Left=partitionAndMerge(s,mid,lists);
+        ListNode* Right=partitionAndMerge(mid+1,e,lists)
+}
+
+parts left and right  and then use  mergetwosortedlinledlist(usingleetcode 21).
+427. Construct Quad Tree //just do jo qus me likha h //otherwise see video // smae h->toh new node bna k return otherwise node bnao then 4 children append kro.
+173. Binary Search Tree Iterator //inorder in stack me store left left push me stack and then next h toh return st.top();
+
+208. Implement Trie (Prefix Tree) //bhot easy h bss ek func and sbdone //bss insert func likhna sikhlo and then done.
+211. Design Add and Search Words Data Structure //pura same implemement trie bss dot ka cse handle. 
+399. Evaluate Division // 1.make adj list of equation ane edgeweightval 2. find the src and des src=que[0] dest=que[1]  //3.call  dfs  but Pehle find src present h toh in adj ->dfs(src,dest,prod,ans,adj,vis) ;
+
+200. Number of Islands //same as number of provinces for(i loop){for(j loop) {if(!vis(mat[i][j] && grid[i][j]=='1' toh call bfs and cnt++);
+207. Course ScheduleI & II // cycle detetction and toposort //acche se dekh lena bfs dfs both vaala bhot easy h .
+
+130. Surrounded Regions //1.surrounded O ko mark visit and queue me push if(i==0 || j==0 || j==m-1 || i==n-1) //2.BFS and mark visit to all O which are  connected to surroundings //3.now check  if(board[i][j]=='O' && !vis[i][j]) toh board[i][j]='X'; (not visited vhi honge jo surrounding se connected nhi honge).
+
+433. Minimum Genetic Mutation(jb bhi koi cheez minimum pucha ho bfs use krrte) //use BFS return lvl; //traverse to adj as "ACGT"  And impt cheez ki = jb bhi vis string ka krrna hota ek set bna lete in graph(433,evaluate division)
+
+127. Word Ladder // same hi h gene mutation ki trh bss all possible alphas check krrte ussme
+
+909. Snakes and Ladders //ek baar aur practice kro BFS
+133. Clone Graph //deep copy of graph
+502. IPO //pq h easy h accha concept h   //1834. Single-Threaded CPU (ATLASSIAN QUS) IMPT Concept h dekhna h 
+79. Word Search ->simple backtrack h 
+
+
+
+
+// Best Time to Buy and Sell Stock I->me 1 transactions allowed
+// Best Time to Buy and Sell Stock II->me multiple transactions allowed
+// Best Time to Buy and Sell Stock III->(3d vector)only 2 transactions allowed 
+// Best Time to Buy and Sell Stock IV->me k transactions allowed
+// Best Time to Buy and Sell Stock with cooldown ->me multiple transactions allowed but with 1 day cooldown(only 2 minor changes)
+// Best Time to Buy and Sell Stock with Transaction Fee ->me multiple transactions allowed but with fee (only 1 minor changes)
+// buy case-> -prices[ind]+solve(ind+1,0,n,prices,dp),other is price high h ni buy kiya 0+solve(ind+1,1,n,prices,dp)
+// sell case-> prices[ind]+solve(ind+1,1,n,prices,dp,fee),nhi kiya sell profit ni ho rha 0+solve(ind+1,0,n,prices,dp)
+//sell hona mtlb ek transaction complete hona  toh mostly changes yhi hote 

@@ -1,6 +1,17 @@
+//binary search me bss 2 chizein 
+//1.range for start and end
+//2.int solve() function for the logic 
+// bss if logic h true toh for min find k liye e=mid-1;
+// max find k liye s=mid+1;
+
+PATTERNS:
+
 //1.rotated sorted ->Max,Min,Peak,left sorted ,right sorted and all.
-//2. find min,max  i.e. to write logic function and  to make it if possible then min k liye e=mid-1 pe and if max then s=mid+1; (koko eating and after that in strivers playlist)
-//3.formula calc scuh as kth missing positive int (striver)
+//2. find min,max  i.e. to write logic function and  to make it if possible then min k liye e=mid-1 pe and if max then s=mid+1; (koko eating and after that in strivers playlist)(issme sort krrne ki jaroorat nhii bcoz hm ans 1 to max(array) me se selelct krrte khud assume krrte chlte ans;
+            if(check<=h){  //yha pe koi == ka case nhii hota bcoz hme min se min nikaalna hota h and then return s; //bcoz find min hi h 
+                e=mid-1;
+            }
+//3.formula calc scuh as kth missing positive int (striver) //nth root // sqrt(x) 
 //4.max(min )  OR min(max) (aggressive cows, book allocation(painters partion,split array largest sum )all exact book allocation)
 //5.median qus or kth median
 //6.2d search(easy like go to each row and search like 1D bs)

@@ -30,9 +30,27 @@ for(auto ch:s) freq[ch-'a']++) if words anagram h toh unki freq same hi aayegi .
 sliding window k kuch qus such  as(930 ,560 ,1248 ) can be done using hashing also as sum equals k rhta toh prevsum-k ***************just like totoalsum me se right minus krrdete toh left aata ye vaala concept .(a-b=c === a-c=b find in map )
 26.  way to make val long to avoid runtime error-> long long val= m*1LL * k*1LL;
 27.ek while k andr while hota in sliding window mtln n+n = O(2n)=O(n) and if usske andr pw map kuch h usska log n to overall O(nlogn) (leetcode-1438)
-28.Vector me jb h erase krrte h(arr.begin()+ind)uss ind ele ko delete krr dega and automatically vo left shift hojaata in vector leetcode-1823
+28.Vector me jb h erase (position dete h )krrte h(arr.begin()+ind)uss ind ele ko delete krr dega and automatically vo left shift hojaata in vector leetcode-1823
 29. INTERSECTION LOGIC-int start = max(f[i][0], s[j][0]);  max of (0,0) dono array ka and min of (1,1) aur jisska 1,1 chota hoga vo aage ) 
                        int end = min(f[i][1], s[j][1]);    bdhega.(leetcode-986)
+30.if we have to make graph from a given tree see qus 1590.
+31.minimum height trees (qus  median of graph ) 310
+
+
+
+//word search,word ladder, word break(revise)
+
+//BFS good qs
+1.bus route
+2.jump game IV
+
+
+//LCS qs
+1.longest palindromic subsequence-another string t(reverse of given string s) and thn check lcs between them
+2.Form a palindrome(GFG)- another string t(reverse of given string s) and thn check lcs between them ang then n-lcs .
+3.convert str1 to str2;
+
+
 
 
 Similar Problems : 
@@ -40,6 +58,18 @@ Similar Problems :
 // 2. Find jumping numbers less than x (GFG)
 // 3. Gene Mutation (Leetcode)
 // 4. Sequential Digits (Leetcode)
+
+//Split Array qus 
+2270 (salesforce)->totsum-rightsum=leftsum; and ek index Pehle tk krrna h .
+
+//Kadane's Algorithm
+1.maximum subarray->last me 0 set.
+2.Maximum Sum Circular Subarray->//kadane's algo ->find max_sum 2. find min_sum 3.find max of max_sum and total_sum - (min_sum)
+3.Maximum Product Subarray.(if (prod==0) prod=1;) ,ek baar aage se find max ,ek baar peeche se --> pre= pre*nums[i]; suf= suf*nums[n-i-1];
+
+//Mergeqs 
+1.Merge k sorted arrays->class bnake noce and then priority queue <node*,vector<node*>,compare>, and so on easy h bss steps dhyaan rkhna h 
+2/Merge k sorted lists ->
 
 
 Multiset(a data structure)(TC=log n)(leetcode-1438)
@@ -49,8 +79,8 @@ Multiset(a data structure)(TC=log n)(leetcode-1438)
 
 
 Question look like sliding window but not
-//1.974. Subarray Sums Divisible by K (modulo baba ki jai ho).
-//2.523. Continuous Subarray Sum (modulo baba ki jai ho).
+//1.974. Subarray Sums Divisible by K (modulo baba ki jai ho && prefix sum).(map of rem and freq)if rem<0 toh rem+=k; and ans+=mp[rem];
+//2.523. Continuous Subarray Sum (modulo baba ki jai ho && prefix sum ).->map of {rem,ind} -> prefix sum find krrk check for rem is in map then vo ans h and check its size     if(i-mp[rem]>=2);
 
 
 DP notes:
@@ -63,10 +93,11 @@ DP notes:
 //if bool h return type toh initialize take false; return take or nottake;
 //if recursion 0 se shuru h toh tabulation always n-1 se hoga or vice versa.
 
-//ek triangle and maximal square qus h jissme start in recursion is from 0,0 and in tabulation it is from i=n-1 seand j=m-1 se;
+//ek triangle(downya diagonal jaa skta h  and bae cas if(i==n-1) return triangle[n-1][j] //vo khud hi j me hrr column lelega) and maximal square qus h jissme start in recursion is from 0,0 and in tabulation it is from i=n-1 seand j=m-1 se;
 
 ************//4 qus almost same concept bss base case change
-combination sum(0,0 se sruru hota in rcursion),coin change,subset sum equal to target,0/1 knapsack (n-1)(m-1)
+combination sum(0,0 se shuru hota in recursion),coin change,subset sum equal to target,0/1 knapsack (n-1)(m-1)
+Generate Parenthesis is same as combination hi	
 
 DP patterns:
 1.dp on 1D(house robber)-> take=nums[i]+solve(i-2,nums) ,nottake=0+solve(i-1,nums)
@@ -121,7 +152,7 @@ DP patterns:
 153. Find Minimum in Rotated Sorted Array // e= mid krenge kyunki mid bhi mera ans ho skta h kyunki yha pe koi == case nhi h issliye e= mid kro tb vo vlaue 						bhi check hogi vrrna skip hojaayegi
 373. Find K Pairs with Smallest Sums ////(Slight Better approach) - O(klog(k))
 //basically hme select krrna h (i+1,j) ya fir(i,j+1) ->out of bound nhi hone chahiye and not vis hone chahiye ->jiska sum min h vo 
-295. Find Median ;from Data Stream //easy bss stream me aate jaa rha ussko left_max_heap and right_min_heap me divide krrte jaao
+295. Find Median from Data Stream //easy bss stream me aate jaa rha ussko left_max_heap and right_min_heap me divide krrte jaao
 55. Jump Game //i+nums[i] pos se relate and do all 3 approaches dp bhi dekh lena chahiye
 45. Jump Game II ,iii,iv(simple bfs h nice concept).
 452. Minimum Number of Arrows to Burst Balloons. //easy h same as merge intervals bss overlapping k andr ka condition thoda dhyaan se
@@ -182,7 +213,8 @@ parts left and right  and then use  mergetwosortedlinledlist(usingleetcode 21).
 909. Snakes and Ladders //ek baar aur practice kro BFS
 133. Clone Graph //deep copy of graph
 502. IPO //pq h easy h accha concept h   //1834. Single-Threaded CPU (ATLASSIAN QUS) IMPT Concept h dekhna h 
-79. Word Search ->simple backtrack h 
+79. Word Search->simple backtrack h 
+
 
 
 

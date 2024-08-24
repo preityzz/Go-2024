@@ -35,6 +35,12 @@ sliding window k kuch qus such  as(930 ,560 ,1248 ) can be done using hashing al
                        int end = min(f[i][1], s[j][1]);    bdhega.(leetcode-986)
 30.if we have to make graph from a given tree see qus 1590.
 31.minimum height trees (qus  median of graph ) 310
+32.Circular Qus-2134. Minimum Swaps to Group All 1's Together II(easy )
+33. strongly conncted compnenets (kusarju's algo) vhi hota h jissme agr u-> v h toh v->u hona chahiye
+steps(1. toposort dfs
+      2. reverse the graph
+      3. dfs call for components)
+34.vis = vector<int>(V, 0); (re-initialize).
 
 
 
@@ -59,13 +65,16 @@ Similar Problems :
 // 3. Gene Mutation (Leetcode)
 // 4. Sequential Digits (Leetcode)
 
+
 //Split Array qus 
 2270 (salesforce)->totsum-rightsum=leftsum; and ek index Pehle tk krrna h .
+
 
 //Kadane's Algorithm
 1.maximum subarray->last me 0 set.
 2.Maximum Sum Circular Subarray->//kadane's algo ->find max_sum 2. find min_sum 3.find max of max_sum and total_sum - (min_sum)
 3.Maximum Product Subarray.(if (prod==0) prod=1;) ,ek baar aage se find max ,ek baar peeche se --> pre= pre*nums[i]; suf= suf*nums[n-i-1];
+
 
 //Mergeqs 
 1.Merge k sorted arrays->class bnake noce and then priority queue <node*,vector<node*>,compare>, and so on easy h bss steps dhyaan rkhna h 
@@ -115,7 +124,7 @@ DP patterns:
 
 
 
-
+//JO COMBINATINS QUS HTE DP ME MTLB ALL POSSIBLE ANSWERS PUCHA HOTA USME TAKE+NOTTAKE AND BASE CASE ME HI 1 YA 0 RETURN HOTA VHII COUNT HOTA TAKE ME 1+solve(ind-1,arr,t) AISE NI KRTE EX: coin change 2 , unique paths.
 
 
 

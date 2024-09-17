@@ -41,14 +41,17 @@ steps(1. toposort dfs
       2. reverse the graph
       3. dfs call for components)
 34.vis = vector<int>(V, 0); (re-initialize).
-
-
+35. Jb bi aage piche ka track rkhna ho from current pos always prefix and suffix isska use hota hai.(whether inc/dec nikaalo ya fir sum vgrh jaisa kuch).
+36.string vis mark k liyr use unordered_set<stirng>vis;
+37.if bfs me minimum find krr rhe then vo lvl++ se hi hota h level order traversal dijstra jaise ni ki  pq ya fir q me pair bnake kr rhe simple lvl++;
+38.string ans(n, ' ');  // Initialize the string `ans` with size `n`
 
 //word search,word ladder, word break(revise)
 
 //BFS good qs
 1.bus route
 2.jump game IV
+3.minimum genetic mutation
 
 
 //LCS qs
@@ -59,7 +62,7 @@ steps(1. toposort dfs
 
 
 
-Similar Problems : 
+Similar Problems : (BFS)
 // 1. Word Ladder (Leetcode)
 // 2. Find jumping numbers less than x (GFG)
 // 3. Gene Mutation (Leetcode)

@@ -45,6 +45,7 @@ steps(1. toposort dfs
 36.string vis mark k liyr use unordered_set<stirng>vis;
 37.if bfs me minimum find krr rhe then vo lvl++ se hi hota h level order traversal dijstra jaise ni ki  pq ya fir q me pair bnake kr rhe simple lvl++;
 38.string ans(n, ' ');  // Initialize the string `ans` with size `n`
+37. static bool comparator (int &a,int&b){ return a>b;}| by reference lete h taaki usski  extra copy naa bne just to save time;
 
 //word search,word ladder, word break(revise)
 
